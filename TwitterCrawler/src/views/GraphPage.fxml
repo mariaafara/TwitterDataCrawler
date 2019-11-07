@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="950.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.GraphPageController">
+    <children>
+      <Pane layoutX="45.0" layoutY="24.0" prefHeight="86.0" prefWidth="409.0" style="-fx-background-color: #0f1e2d;">
+         <children>
+            <Label layoutX="287.0" layoutY="211.0" textFill="#4d4c4c">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+                <Label layoutX="14.0" layoutY="31.0" text="Number Accounts" textFill="WHITE">
+                    <font>
+                        <Font name="Segoe UI Bold" size="19.0" />
+                    </font>
+                </Label>
+                <Label fx:id="numberAccounts" layoutX="310.0" layoutY="30.0" text="0" textFill="WHITE">
+                    <font>
+                        <Font name="Segoe UI Bold" size="22.0" />
+                    </font>
+                </Label>
+            <Button id="addbtn" fx:id="addbtn" layoutX="323.0" layoutY="9.0" mnemonicParsing="false" onAction="#addAccount" prefHeight="43.0" prefWidth="72.0" style="-fx-background-color: #0f1e2d;" text="+" textFill="#fcf8f8">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
+         </children>
+         <effect>
+            <DropShadow color="#d7d2d2" height="50.0" radius="24.5" width="50.0" />
+         </effect>
+      </Pane>
+      <Pane layoutX="45.0" layoutY="128.0" prefHeight="438.0" prefWidth="409.0" style="-fx-background-color: #fff;">
+         <children>
+            <Label layoutX="35.0" layoutY="61.0" prefHeight="23.0" prefWidth="340.0" text="Enter Twitter User ID (or screen name), or choose a file " textFill="#9a9a9a">
+               <font>
+                  <Font name="Segoe UI Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="userId" layoutX="36.0" layoutY="97.0" prefHeight="25.0" prefWidth="218.0" />
+            <Button fx:id="openFileOfIdsButton" layoutX="267.0" layoutY="97.0" mnemonicParsing="false" onAction="#openFileOfIds" prefHeight="25.0" prefWidth="128.0" text="Choose a File of IDs" />
+            <Label layoutX="35.0" layoutY="185.0" text="Depth" textFill="#9a9a9a">
+               <font>
+                  <Font name="Segoe UI Bold" size="12.0" />
+               </font>
+            </Label>
+            <Pane layoutY="352.0" prefHeight="86.0" prefWidth="409.0" style="-fx-background-color: #F0F0F0;">
+               <children>
+                  <Button fx:id="startCrawlingButton" layoutX="141.0" layoutY="2.0" mnemonicParsing="false" onAction="#StartCrawling" prefHeight="25.0" prefWidth="128.0" text="Start Crawling" />
+                  <Button fx:id="stopCrawlingButton" layoutX="14.0" layoutY="43.0" mnemonicParsing="false" onAction="#stopCrawling" prefHeight="25.0" prefWidth="128.0" text="Stop Crawling" />
+                  <Button fx:id="resumeCrawlingButton" layoutX="150.0" layoutY="43.0" mnemonicParsing="false" onAction="#resumeCrawling" prefHeight="25.0" prefWidth="119.0" text="Resume" />
+                  <Button fx:id="clearHistoryButton" layoutX="274.0" layoutY="43.0" mnemonicParsing="false" onAction="#clearHistory" prefHeight="25.0" prefWidth="128.0" text="Cancel Current Crawel">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Label layoutX="35.0" layoutY="253.0" prefHeight="23.0" prefWidth="205.0" text="Choose Where to Save the Results" textFill="#9a9a9a">
+               <font>
+                  <Font name="Segoe UI Bold" size="12.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="43.0" prefWidth="409.0" style="-fx-background-color: #0f1e2d;">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="35.0" layoutY="14.0" prefHeight="15.0" prefWidth="350.0" text="Enter Your Graph Crawling Criteria" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Separator layoutX="-1.0" layoutY="231.0" prefHeight="3.0" prefWidth="409.0" />
+            <Button fx:id="chooseFileButton" layoutX="267.0" layoutY="252.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="25.0" prefWidth="128.0" text="Choose Path" />
+            <Label id="fileofIDS" fx:id="fileofIDS" layoutX="11.0" layoutY="151.0" prefHeight="9.0" prefWidth="350.0" textFill="#2c11d6" />
+            <Label id="saveResults" fx:id="saveResults" layoutX="19.0" layoutY="304.0" prefHeight="17.0" prefWidth="370.0" textFill="#2c11d6">
+               <tooltip>
+                  <Tooltip fx:id="tooltip" />
+               </tooltip></Label>
+            <Button fx:id="Xbutton" layoutX="368.0" layoutY="147.0" mnemonicParsing="false" onAction="#removePathFile" text="X" textFill="#fc0c0c">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <tooltip>
+                  <Tooltip fx:id="tooltipxbutton" text="Cancel the file chosen" />
+               </tooltip>
+            </Button>
+            <Slider fx:id="slider" blockIncrement="1.0" layoutX="83.0" layoutY="182.0" majorTickUnit="3.0" max="20.0" min="1.0" minorTickCount="20" prefHeight="37.0" prefWidth="205.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
+            <Label fx:id="valueOfSlider" layoutX="315.0" layoutY="184.0" text="1.0" textFill="#f22020" />
+         </children>
+         <effect>
+            <DropShadow color="#b5afaf" height="50.0" radius="24.5" width="50.0" />
+         </effect>
+      </Pane>
+      <Pane layoutX="498.0" layoutY="128.0" prefHeight="438.0" prefWidth="409.0" style="-fx-background-color: #fff;">
+         <effect>
+            <DropShadow color="#b5afaf" height="50.0" radius="24.5" width="50.0" />
+         </effect>
+         <children>
+            <Pane prefHeight="43.0" prefWidth="409.0" style="-fx-background-color: #0f1d2d;">
+               <children>
+                  <Label layoutX="287.0" layoutY="211.0" textFill="#4d4c4c">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="numbernodesCrawled" layoutX="22.0" layoutY="14.0" text="Number Friends Crawled" textFill="WHITESMOKE">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nbrNodeCrawledLabel" layoutX="344.0" layoutY="10.0" text="0" textFill="#9a9a9a">
+                     <font>
+                        <Font name="Segoe UI" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow color="#d7d2d2" height="50.0" radius="24.5" width="50.0" />
+               </effect>
+            </Pane>
+            <TableView fx:id="tableView" layoutY="42.0" prefHeight="396.0" prefWidth="409.0">
+              <columns>
+                <TableColumn fx:id="Informations" prefWidth="271.0" text="Informations" />
+                <TableColumn fx:id="Date" minWidth="0.0" prefWidth="137.0" text="Date" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Button fx:id="graphhelp" layoutX="907.0" layoutY="566.0" mnemonicParsing="false" onAction="#openHelp" prefHeight="24.0" prefWidth="22.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView id="graphhelp" fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8_Info_32px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Pane layoutX="498.0" layoutY="24.0" prefHeight="86.0" prefWidth="409.0" style="-fx-background-color: #0f1e2d;">
+         <children>
+            <Label layoutX="24.0" layoutY="32.0" prefHeight="15.0" prefWidth="362.0" text="FeedBacks On the Running Crawl" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Button layoutX="909.0" layoutY="139.0" mnemonicParsing="false" onAction="#extractFeedback" prefHeight="3.0" prefWidth="0.0" style="-fx-background-color: #ffff;" textFill="#f8f7f7">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="25.0" onMouseClicked="#extractFeedback" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/extractSymbole.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Extract Feedback To File" />
+         </tooltip>
+      </Button>
+    </children>
+</AnchorPane>

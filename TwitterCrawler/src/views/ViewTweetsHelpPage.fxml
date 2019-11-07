@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ViewTweetsHelpPageController">
+   <children>
+      <Label layoutX="38.0" layoutY="28.0" prefHeight="17.0" prefWidth="290.0" text="User Guide">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Separator layoutX="38.0" layoutY="60.0" prefHeight="3.0" prefWidth="219.0" />
+      <TextArea editable="false" layoutX="32.0" layoutY="60.0" prefHeight="317.0" prefWidth="537.0" text="You should choose a json file that contains tweets  for a single user&#10;&#10;Then some information about the user profile are listed along with his tweets&#10;&#10;If a certain tweet has media in it there is a link that is attached below it&#10;&#10;When clicked it redirects you to the original tweet post to see them in your default browser&#10;&#10;Inorder to copy the tweet right click on the tweet and select copy&#10;&#10;&#10;&#10;For more Informations &#10;Contact Us:&#10;ali.choumane@ul.edu.lb &#10;fakih.k.ali@gmail.com&#10;maria-afara5@hotmail.com" />
+   </children>
+</AnchorPane>

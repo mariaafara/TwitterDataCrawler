@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <Label layoutX="38.0" layoutY="28.0" prefHeight="17.0" prefWidth="290.0" text="User Guide">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Separator layoutX="38.0" layoutY="60.0" prefHeight="3.0" prefWidth="219.0" />
+      <TextArea editable="false" layoutX="32.0" layoutY="60.0" prefHeight="317.0" prefWidth="537.0" text="Number of accounts&#10;At any moment, even while crawling for a similar tweet the user can press the plus button &#10;(Top of the window) and add another twitter developer account.&#10;PS: the user can benefits from this feature when all his working accounts exceeded the limit &#10;of queries, so if he adds an account the graph crawling will continue without waiting 15 min&#10; (The time needed to reset the number of queries for each twitter developer account).&#10;Input&#10;In the first input the user can write one of this two options:&#10;•&#9;Tweet Id   &#9;&#9;&#9;&#10;•&#9;Tweet url in the following format:&#9;&#10;o&#9;https://twitter.com/username/status/tweetid&#10;&#10;Or choose a file that contains tweets ids separated by enter .Each line contains single ID. &#10;(.txt File).&#10;&#10;Depth&#10;The user should choose the depth of the graph he want to build and the maximum &#10;&#10;Between 2 Dates&#10;The user can specify between what dates does he wants the crawled tweets to be in.&#10;&#10;Save File&#10;The user should choose in what format does he wants to save the results, either in json or&#10; text format (put in radio bottoms).&#10;In each case the user also should first select the folder he wants to save the result in, &#10;then for a single tweet id a folder will be generated holding its name and each crawled &#10;similar tweet will be saved in a single file either .txt or .json according to what has been chosen.&#10;                                             &#10;Feedback&#10;The user can extract all the feedback and save it in a file at any moment.&#10;&#10;Start Crawling Button&#10;Needed to start the crawling.&#10;&#10;Stop Crawling Button&#10;If the user press this button while crawling the crawl is stopped and only those which are &#10;already been crawled will be saved.&#10;&#10;&#10;&#10;For more Informations &#10;Contact Us:&#10;ali.choumane@ul.edu.lb &#10;fakih.k.ali@gmail.com&#10;maria-afara5@hotmail.com&#10;" />
+   </children>
+</AnchorPane>

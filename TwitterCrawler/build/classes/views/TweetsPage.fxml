@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.CheckComboBox?>
+
+<AnchorPane fx:id="anchor" prefHeight="600.0" prefWidth="950.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TweetsPageController">
+    <children>
+        <Pane layoutX="46.0" layoutY="25.0" prefHeight="86.0" prefWidth="409.0" style="-fx-background-color: #0f1e2d;">
+            <children>
+                <Label layoutX="287.0" layoutY="211.0" textFill="#4d4c4c">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Label>
+                <Label layoutX="14.0" layoutY="31.0" prefHeight="25.0" prefWidth="163.0" text="Number Accounts" textFill="WHITE">
+                    <font>
+                        <Font name="Segoe UI Bold" size="19.0" />
+                    </font>
+                </Label>
+                <Label fx:id="numberAccounts" layoutX="328.0" layoutY="32.0" text="0" textFill="WHITE">
+                    <font>
+                        <Font name="Segoe UI Bold" size="22.0" />
+                    </font>
+                </Label>
+                <Button id="addbtn" fx:id="addbtn" layoutX="360.0" layoutY="4.0" mnemonicParsing="false" onAction="#addAccount" prefHeight="79.0" prefWidth="35.0" style="-fx-background-color: #0f1e2d;" text="+" textFill="#fcf8f8">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+            </children>
+            <effect>
+                <DropShadow color="#d7d2d2" height="50.0" radius="24.5" width="50.0" />
+            </effect>
+        </Pane>
+        <Pane layoutX="497.0" layoutY="25.0" prefHeight="86.0" prefWidth="409.0" style="-fx-background-color: #0f1e2d;">
+            <children>
+                <Label layoutX="24.0" layoutY="32.0" prefHeight="15.0" prefWidth="362.0" text="FeedBacks On the Running Crawl" textFill="WHITE">
+                    <font>
+                        <Font name="Segoe UI Bold" size="19.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Pane layoutX="497.0" layoutY="128.0" prefHeight="438.0" prefWidth="409.0" style="-fx-background-color: #fff;">
+            <effect>
+                <DropShadow color="#b5afaf" height="50.0" radius="24.5" width="50.0" />
+            </effect>
+            <children>
+                <TableView fx:id="tableView" prefHeight="438.0" prefWidth="409.0">
+                    <columns>
+                        <TableColumn fx:id="Informations" prefWidth="271.0" text="Informations" />
+                        <TableColumn fx:id="Date" minWidth="0.0" prefWidth="137.0" text="Date" />
+                    </columns>
+                </TableView>
+            </children>
+        </Pane>
+        <Pane fx:id="pane" layoutX="46.0" layoutY="128.0" prefHeight="438.0" prefWidth="409.0" style="-fx-background-color: #fff;">
+            <children>
+                <Label layoutX="21.0" layoutY="51.0" prefHeight="23.0" prefWidth="340.0" text="Enter Twitter User ID (or screen name), or choose a file " textFill="#9a9a9a">
+                    <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="userId" layoutX="21.0" layoutY="79.0" prefHeight="25.0" prefWidth="238.0" />
+                <Pane layoutY="352.0" prefHeight="86.0" prefWidth="409.0" style="-fx-background-color: #F0F0F0;">
+                    <children>
+                        <Button fx:id="startCrawlingButton" layoutX="141.0" layoutY="2.0" mnemonicParsing="false" onAction="#StartCrawling" prefHeight="25.0" prefWidth="128.0" text="Start Crawling" />
+                        <Button fx:id="resumeCrawlingButton" layoutX="150.0" layoutY="43.0" mnemonicParsing="false" onAction="#resumeCrawling" prefHeight="25.0" prefWidth="119.0" text="Resume" />
+                        <Button fx:id="clearHistoryButton" layoutX="274.0" layoutY="43.0" mnemonicParsing="false" onAction="#clearHistory" prefHeight="25.0" prefWidth="128.0" text="Cancel Current Crawel">
+                            <font>
+                                <Font size="11.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="stopCrawlingButton" layoutX="18.0" layoutY="43.0" mnemonicParsing="false" onAction="#stopCrawling" prefHeight="25.0" prefWidth="119.0" text="Stop Crawling" />
+                    </children>
+                </Pane>
+                <Label layoutX="21.0" layoutY="294.0" prefHeight="23.0" prefWidth="205.0" text="Choose Where to Save the Results" textFill="#9a9a9a">
+                    <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Pane prefHeight="43.0" prefWidth="409.0" style="-fx-background-color: #0f1e2d;">
+                    <children>
+                        <Label contentDisplay="CENTER" layoutX="35.0" layoutY="14.0" prefHeight="15.0" prefWidth="350.0" text="Enter Your User Tweets Crawling Criteria" textFill="WHITE">
+                            <font>
+                                <Font name="Segoe UI" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Separator layoutY="209.0" prefHeight="3.0" prefWidth="409.0" />
+                <Button fx:id="chooseFileButton" layoutX="269.0" layoutY="293.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="25.0" prefWidth="128.0" text="Choose Path" />
+                <Label id="saveResults" fx:id="saveResults" layoutX="21.0" layoutY="322.0" prefHeight="17.0" prefWidth="370.0" textFill="#2c11d6">
+                    <tooltip>
+                        <Tooltip fx:id="tooltip" />
+                    </tooltip>
+                </Label>
+                <Separator layoutY="284.0" prefHeight="3.0" prefWidth="409.0" />
+                <Button fx:id="openFileOfIdsButton" layoutX="269.0" layoutY="79.0" mnemonicParsing="false" onAction="#openFileOfIds" prefHeight="25.0" prefWidth="128.0" text="Choose a File of IDs" />
+                <Label id="fileofIDS" fx:id="fileofIDS" layoutX="16.0" layoutY="119.0" prefHeight="9.0" prefWidth="350.0" textFill="#2c11d6">
+                    <tooltip>
+                        <Tooltip fx:id="tooltip1" />
+                    </tooltip>
+                </Label>
+                <Button fx:id="Xbutton" layoutX="373.0" layoutY="115.0" mnemonicParsing="false" onAction="#removeFilePath" text="X" textFill="#fc0c0c">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                    <tooltip>
+                        <Tooltip fx:id="tooltipxbutton" text="Cancel the file chosen" />
+                    </tooltip>
+                </Button>
+                <Label layoutX="16.0" layoutY="147.0" prefHeight="23.0" prefWidth="63.0" text="Between" textFill="#9a9a9a">
+                    <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                    </font>
+                </Label>
+                <DatePicker fx:id="fromDate" layoutX="81.0" layoutY="146.0" prefHeight="25.0" prefWidth="119.0" />
+                <Label layoutX="15.0" layoutY="253.0" prefHeight="23.0" prefWidth="128.0" text="Tweet Language" textFill="#9a9a9a">
+                    <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                    </font>
+                </Label>
+                <Label layoutX="216.0" layoutY="147.0" prefHeight="23.0" prefWidth="34.0" text="and" textFill="#9a9a9a">
+                    <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                    </font>
+                </Label>
+                <DatePicker fx:id="toDate" layoutX="272.0" layoutY="146.0" prefHeight="25.0" prefWidth="119.0" />
+                <CheckComboBox fx:id="checkComboTweet" layoutX="276.0" layoutY="252.0" maxWidth="255.0" prefHeight="25.0" prefWidth="115.0" />
+                <CheckBox fx:id="TweetsCheckAll" layoutX="143.0" layoutY="256.0" mnemonicParsing="false" onAction="#tweetsLangClick" text="All" />
+                <Label fx:id="labelOrChoose1" layoutX="205.0" layoutY="256.0" text="Or Choose" textFill="#2719e4" />
+       
+            </children>
+            <effect>
+                <DropShadow color="#b5afaf" height="50.0" radius="24.5" width="50.0" />
+            </effect>
+        </Pane>
+        <Button layoutX="906.0" layoutY="169.0" mnemonicParsing="false" onAction="#extractFeedback" prefHeight="3.0" prefWidth="0.0" style="-fx-background-color: #ffff;" textFill="#f8f7f7">
+            <tooltip>
+                <Tooltip text="Extract Feedback To File" />
+            </tooltip>
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="25.0" onMouseClicked="#extractFeedback" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../icons/extractSymbole.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+          <Button fx:id="tweethelp" layoutX="917.0" layoutY="576.0" mnemonicParsing="false" onAction="#openHelp" prefHeight="24.0" prefWidth="22.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView id="tweethelp" fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8_Info_32px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+    </children>
+</AnchorPane>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="38.0" layoutY="28.0" prefHeight="17.0" prefWidth="290.0" text="User Guide">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Separator layoutX="38.0" layoutY="60.0" prefHeight="3.0" prefWidth="219.0" />
+      <TextArea editable="false" layoutX="28.0" layoutY="60.0" prefHeight="317.0" prefWidth="553.0" text="Number of accounts&#10;At any moment, even while crawling a graph the user can press the plus button (Top of the window) and add another twitter developer account.&#10;PS: the user can benefits from this feature when all his working accounts exceeded the limit of queries, so if he add an account the graph crawling will continue without waiting 15 min (The time needed to reset the number of queries for each twitter developer account).&#10;Input&#10;In the first input the user can write one of this two options:&#10;         •&#9;Twitter User Id   &#9;&#9;&#9;&#9;Ex: 12.&#10;         •&#9;Screen Name of Twitter user in the following format:&#9;&#10;                       o&#9;     https://twitter.com/Cristiano&#9;&#10;                       o&#9;      Cristiano&#10;                       o&#9;      @Cristiano&#10;Or He can left this input empty and choose a file of Twitter Users IDs (.txt File).&#10;The format of the file is very simple, the file has no header and each Id is located in a line (Each line contains single ID).&#10;&#10;&#10;Depth&#10;The user should choose the depth of the graph he want to build and the maximum value if 20. &#10;PS: If the depth is 5 and the average number of friends of each user is 200 then the graph will contain   about 320,000,000,000‬ connection.&#10;&#10;&#10;Save File&#10;In both input case (User Id or File of IDs) the output will be saved in a single file as follow                     (Source&#9;Destination) per line.&#10;The user should choose where to save the output file (Path) and in which format (.txt or .csv).                                                  &#10;&#10;&#10;Feedback&#10;The user can extract all the feedback and save it in a file at any moment.&#10;&#10;&#10;Start Crawling Button&#10;Needed to start the graph crawling.&#10;&#10;&#10;Stop Crawling Button&#10;If the user press this button while crawling the reached result will be save in the file.                                                                  &#10;&#10;&#10;Resume Crawling Button&#10;This button will be clickable only after clicking the stop crawling button or exiting the application while crawling. So if the user want to continue his crawl from the stopped point he can press this button and his work will continue normally.&#10;&#10;&#10;Cancel Current Crawl&#10;This button will be clickable only after clicking the stop crawling button or exiting the application while crawling. So by clicking this button the feedback window will reset and all the inputs fields will be enabled and ready for a new crawl.&#10;&#10;&#10;&#10;For more Informations &#10;Contact Us:&#10;ali.choumane@ul.edu.lb &#10;fakih.k.ali@gmail.com&#10;maria-afara5@hotmail.com" wrapText="true" />
+   </children>
+</AnchorPane>
